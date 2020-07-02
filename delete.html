@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-app.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/firebase/7.14.5/firebase-storage.js"></script>
+<script>
+    var Config = {
+        apiKey: "AIzaSyCD_lYY31xM6A4kSXx8rsik80OY5ZKjYEw",
+        authDomain: "shop-a1950.firebaseapp.com",
+        databaseURL: "https://shop-a1950.firebaseio.com",
+        projectId: "shop-a1950",
+        storageBucket: "shop-a1950.appspot.com",
+        messagingSenderId: "240563362043",
+        appId: "1:240563362043:web:14391ba28ed8eb9ede385e",
+        measurementId: "G-H0E8QLZM54"
+    };
+
+    firebase.initializeApp(Config);
+
+    var desertRef = firebase.storage().ref('img1.jpg');
+    desertRef.delete().then(function() {
+        console.log('删除成功')
+    }).catch(function(error) {
+        console.log(error)
+    });
+</script>
+</body>
+</html>

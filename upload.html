@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<progress value="0" max="100" id="upload"> </progress>
+<input type="file" id="filebutton">
+<script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-app.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/firebase/7.14.5/firebase-storage.js"></script>
+<script>
+    var Config = {
+        apiKey: "AIzaSyCCUWj2XVn2WtTJKhA6DvwlpmU4V9e-J54",
+        authDomain: "kugou-f2335.firebaseapp.com",
+        databaseURL: "https://kugou-f2335.firebaseio.com",
+        projectId: "kugou-f2335",
+        storageBucket: "kugou-f2335.appspot.com",
+        messagingSenderId: "536884088160",
+        appId: "1:536884088160:web:05fefcf0c0e0a071916205",
+        measurementId: "G-FKL41MJWS1"
+    };
+    firebase.initializeApp(Config);
+
+    filebutton = document.getElementById('filebutton');
+    upload= document.getElementById('upload');
+    filebutton.addEventListener("change", function(e){
+        var file = e.target.files[0];
+        storageRef = firebase.storage().ref('song/'+file.name);
+        task = storageRef.put(file);
+        task.on('state_changed',
+            function(snapshot) {
+                var percent = snapshot.bytesTransferred / snapshot.totalBytes * 100;
+                upload.value = percent;
+        })
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        video{
+            width: 800px;
+        }
+    </style>
+</head>
+<body>
+<video src="" id = 'video' controls autoplay> </video>
+<script src="https://cdn.bootcdn.net/ajax/libs/firebase/7.15.1-0/firebase-app.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/firebase/7.14.5/firebase-storage.js"></script>
+<script>
+    var Config = {
+        apiKey: "AIzaSyCCUWj2XVn2WtTJKhA6DvwlpmU4V9e-J54",
+        authDomain: "kugou-f2335.firebaseapp.com",
+        databaseURL: "https://kugou-f2335.firebaseio.com",
+        projectId: "kugou-f2335",
+        storageBucket: "kugou-f2335.appspot.com",
+        messagingSenderId: "536884088160",
+        appId: "1:536884088160:web:05fefcf0c0e0a071916205",
+        measurementId: "G-FKL41MJWS1"
+    };
+
+    firebase.initializeApp(Config);
+
+    defaultStorage = firebase.storage();
+    defaultStorage.ref('song/殿书.mp3').getDownloadURL()
+        .then(function(url) {
+            var xhr = new XMLHttpRequest();
+            xhr.responseType = 'blob';
+            xhr.onload = function(event) {
+                var blob = xhr.response;
+            };
+            xhr.open('GET', url);
+            xhr.send();
+            var video = document.getElementById('video');
+            video.src = url;
+        }).catch(function(error) {
+    });
+</script>
+
+
+
+</body>
+</html>

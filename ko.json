@@ -1,0 +1,14 @@
+{
+  "user" :  {
+    "email" : {
+      "pk": 5252
+    },
+    "graduationschool" : {
+      "jjj": 98
+    },
+    "id" : 1,
+    "name" : {
+      "l": 999
+    }
+  }
+}

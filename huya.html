@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://www.gstatic.com/firebasejs/4.10.0/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-database.js"></script>
+</head>
+<body>
+<script>
+    function get(){
+        return new Promise((resolve,reject) => {
+            fetch('https://my-app-97f6d.firebaseio.com/.json')
+                .then(res => res.json())
+                .then(data => console.log(data))
+                .catch(err => reject(err))
+        })
+    }
+    get();
+    const data =  {
+        email: "77",
+        graduationschool: "22",
+        id: 1,
+        name: "99",
+        phone: "77",
+        profession: "2007",
+        profile: "77",
+    }
+    url = 'https://my-app-97f6d.firebaseio.com/.json';
+    function put(url,data){
+        return new Promise((resolve,reject) => {
+            fetch(url,{
+                method:"PUT",
+                headers:{
+                    'Content-type':'application/json'
+                },
+                body:JSON.stringify(data)
+            })
+                .then(res => res.json())
+                .then(data => resolve(data))
+                .catch(err => reject(err))
+        })
+    }
+    put(url,data);
+</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+{
+  "user" : {
+    "data" : {
+      "-M83Ekp0YhFhbx4q3RbC" : {
+        "email" : "email",
+        "profile_picture" : "imageUrl",
+        "username" : "name"
+      }
+    },
+    "email" : {
+      "pk" : 5252
+    },
+    "graduationschool" : {
+      "jjj" : 98
+    },
+    "id" : 1,
+    "name" : {
+      "l" : 999
+    }
+  }
+}

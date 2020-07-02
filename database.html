@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-app.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/firebase/7.14.5/firebase-database.js"></script>
+
+<script>
+    var Config = {
+        apiKey: "AIzaSyCD_lYY31xM6A4kSXx8rsik80OY5ZKjYEw",
+        authDomain: "shop-a1950.firebaseapp.com",
+        databaseURL: "https://shop-a1950.firebaseio.com",
+        projectId: "shop-a1950",
+        storageBucket: "shop-a1950.appspot.com",
+        messagingSenderId: "240563362043",
+        appId: "1:240563362043:web:14391ba28ed8eb9ede385e",
+        measurementId: "G-H0E8QLZM54"
+    };
+    firebase.initializeApp(Config);
+
+    // var message = firebase.database().ref('user/'+'data')   //添加数据
+    // message.push({
+    //     username: 'name',
+    //     email: 'email',
+    //     profile_picture : 'imageUrl'
+    // })
+
+    // firebase.database().ref('user/' + 'userId').set({   //添加数据
+    //     username: "name",
+    //     email: "email",
+    //     profile_picture : "imageUrl"
+    // }, function(error) {
+    //     if (error) {
+    //         // The write failed...
+    //     } else {
+    //         // Data saved successfully!
+    //     }
+    // })
+
+
+    // firebase.database().ref('user/'+'data').remove();   删除数据
+
+
+    // var postData = {                 修改数据
+    //     username: "7",
+    //     email: "8",
+    //     profile_picture : "9"
+    // };
+    // var updates = {};
+    // updates['/user/' + 'userId' ] = postData;
+    // firebase.database().ref().update(updates);
+
+
+    // var starCountRef = firebase.database().ref('user/' + 'userId' + '/email');  //读取
+    // starCountRef.on('value', function(snapshot) {
+    //     console.log(snapshot.val())
+    // });
+
+</script>
+</body>
+</html>
